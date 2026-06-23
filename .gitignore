@@ -1,0 +1,26 @@
+# LaTeX auxiliares
+*.aux
+*.log
+*.nav
+*.out
+*.snm
+*.toc
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.bbl
+*.blg
+*.bcf
+*.run.xml
+*.xdv
+
+# PDF compilado (el fuente es el .tex)
+shor_presentacion.pdf
+
+# Outputs del skill
+outputs/
+
+# Editor
+*.swp
+*~
+.DS_Store
