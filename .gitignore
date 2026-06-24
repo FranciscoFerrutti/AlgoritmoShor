@@ -15,7 +15,7 @@
 *.xdv
 
 # PDF compilado (el fuente es el .tex)
-shor_presentacion.pdf
+# shor_presentacion.pdf  ← se sube al repo para referencia rápida
 
 # Outputs del skill
 outputs/
