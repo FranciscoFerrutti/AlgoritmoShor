@@ -54,16 +54,13 @@
 %% ── Metadatos ───────────────────────────────────────────────────────────────
 \title[Algoritmo de Shor]{El Algoritmo de Shor}
 \subtitle{Factorización de enteros en tiempo polinómico cuántico}
-\author{Juan Ignacio Fernandez \and [Nombre 2]}
+\author{Juan Ignacio Fernandez Dinardo \and Francisco Marcos Ferrutti}
 \institute{Computación Cuántica · Ingeniería Informática · ITBA}
 \date{Junio 2026}
 
 %% ═══════════════════════════════════════════════════════════════════════════
 \begin{document}
 %% ═══════════════════════════════════════════════════════════════════════════
-
-%% ── SECCIÓN 1: Motivación y RSA ────────────────────────────────────────────
-\section{Motivación y RSA}
 
 %% ── Slide 1: Portada ───────────────────────────────────────────────────────
 \begin{frame}
@@ -80,6 +77,9 @@
     las estimaciones. Pero la amenaza es creíble y ya se estandarizan reemplazos.
   }
 \end{frame}
+
+%% ── SECCIÓN 1: Motivación y RSA ────────────────────────────────────────────
+\section{Motivación y RSA}
 
 %% ── Slide 2: Hoja de ruta ──────────────────────────────────────────────────
 \begin{frame}{Hoja de ruta}
@@ -703,26 +703,25 @@
 
 %% ── Slide 19: QFT vs. DFT/FFT ────────────────────────────────────────────
 \begin{frame}{QFT vs.\ DFT/FFT clásica}
-  \begin{center}
-  \begin{tabular}{lll}
+  \resizebox{\textwidth}{!}{%
+  \begin{tabular}{>{\bfseries}l p{5.2cm} p{5.2cm}}
     \toprule
     & \textbf{DFT/FFT (clásica)} & \textbf{QFT (cuántica)} \\
     \midrule
     Sobre qué actúa
       & Vector de $M$ amplitudes explícitas
-      & Amplitudes de $n=\log_2 M$ qubits \\[3pt]
+      & Amplitudes de $n=\log_2 M$ qubits \\[4pt]
     Costo
-      & FFT: $O(M\log M)=O(2^n\cdot n)$
-      & $O(n^2)=O((\log M)^2)$ compuertas \\[3pt]
+      & FFT: $O(M\log M)=O(2^n\!\cdot\! n)$
+      & $O(n^2)=O((\log M)^2)$ compuertas \\[4pt]
     Salida
       & Todas las $M$ componentes, \textbf{legibles}
-      & Una sola muestra (probabilística) \\[3pt]
+      & Una sola muestra (probabilística) \\[4pt]
     Acceso
       & Lectura completa del espectro
       & No se puede leer todo (medición colapsa) \\
     \bottomrule
-  \end{tabular}
-  \end{center}
+  \end{tabular}}
 
   \begin{alertblock}{La diferencia clave}
     La QFT es \textbf{exponencialmente más rápida} en operaciones\ldots\\
@@ -1515,35 +1514,41 @@
 
 %% ── Slide 41: Referencias ────────────────────────────────────────────────
 \begin{frame}{Referencias}
-  {\small
-  \textbf{Fuente técnica estándar:}
+  \begin{columns}[T]
+  \column{0.5\textwidth}
+  {\footnotesize
+  \textbf{Estándar técnico:}
   \begin{itemize}
     \item M.\ Nielsen, I.\ Chuang, \textit{Quantum Computation and Quantum
-          Information}, Cambridge — cap.\ 5 y Apéndice A4 (Teorema A4.13).
-    \item P.\ Shor, ``Algorithms for Quantum Computation\ldots'',
-          FOCS 1994.
+          Information}, Cambridge — cap.\ 5, Teorema A4.13.
+    \item P.\ Shor, ``Algorithms for Quantum Computation'', FOCS 1994.
   \end{itemize}
-
+  \vspace{4pt}
   \textbf{Material de la cátedra:}
   \begin{itemize}
     \item C.\ H.\ Ugwuishiwu et al., ``An Overview of Quantum Cryptography
           and Shor's Algorithm'', \textit{IJATCSE} 9(5), 2020.
-    \item Clase 04 — Criptografía: Cifrado asimétrico y firma digital, ITBA.
-  \end{itemize}
-
-  \textbf{Hardware y estimaciones (consultado junio 2026):}
-  \begin{itemize}
-    \item Google Quantum AI, chip ``Willow'', 2024--2025.
-    \item IBM, hoja de ruta ``Starling 2029'', comunicado 10-jun-2025.
-    \item C.\ Gidney, arXiv:2505.15917, 2025 ($<$1M qubits físicos).
-    \item C.\ Gidney, M.\ Ekerå, 2019 (20M qubits físicos, 8h).
-  \end{itemize}
-
-  \textbf{NIST PQC (consultado junio 2026):}
-  \begin{itemize}
-    \item FIPS 203/204/205 finalizados 13-ago-2024; HQC seleccionado 11-mar-2025.
+    \item Clase 04 — Criptografía asimétrica, ITBA.
   \end{itemize}
   }
+
+  \column{0.5\textwidth}
+  {\footnotesize
+  \textbf{Hardware y estimaciones:}
+  \begin{itemize}
+    \item Google Quantum AI, chip Willow, 2024--2025.
+    \item IBM, hoja de ruta Starling 2029, jun-2025.
+    \item C.\ Gidney, arXiv:2505.15917 (2025)\\ — $<$1M qubits físicos para RSA-2048.
+    \item C.\ Gidney, M.\ Ekerå (2019)\\ — 20M qubits, 8h.
+  \end{itemize}
+  \vspace{4pt}
+  \textbf{NIST PQC:}
+  \begin{itemize}
+    \item FIPS 203/204/205 — 13-ago-2024.
+    \item HQC seleccionado — 11-mar-2025.
+  \end{itemize}
+  }
+  \end{columns}
 
   \note{
     Tener estas referencias a mano para responder preguntas de profundidad.\\[4pt]
