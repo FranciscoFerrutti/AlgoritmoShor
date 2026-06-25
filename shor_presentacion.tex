@@ -1073,18 +1073,17 @@
   Con $r=4$ y $2^t=256$, los picos de la QFT$^{-1}$ están en
   $c\approx s\cdot 64$ ($s=0,1,2,3$):
 
-  \begin{center}
+  \resizebox{\textwidth}{!}{%
   \begin{tabular}{ccccl}
     \toprule
     $c$ & $c/256$ & fracción reducida & denominador & resultado \\
     \midrule
     0   & 0       & 0                 & —           & inútil ($s=0$), repetir \\
     64  & 1/4     & \textbf{1/4}      & \textbf{4}  & \textcolor{cuantico!80!black}{$r=4$ \checkmark} \\
-    128 & 1/2     & 1/2               & 2           & candidato $r=2$; $7^2\bmod15=4\neq1$ → repetir \\
+    128 & 1/2     & 1/2               & 2           & candidato $r=2$; $7^2\bmod15=4\neq1\to$ repetir \\
     192 & 3/4     & \textbf{3/4}      & \textbf{4}  & \textcolor{cuantico!80!black}{$r=4$ \checkmark} \\
     \bottomrule
-  \end{tabular}
-  \end{center}
+  \end{tabular}}
 
   \vspace{0.2em}
   Con pocas mediciones, se obtiene $r=4$ con altísima probabilidad.
@@ -1223,15 +1222,15 @@
     \draw[->,thick] (0,0) -- (7.5,0) node[right]{\small bits de $N$};
     \draw[->,thick] (0,0) -- (0,4.5) node[above]{\small tiempo};
 
-    % GNFS (sub-exponencial) — curva que sube rápido
-    \draw[cuantico, very thick, domain=0.3:7, samples=60]
-      plot (\x, {0.08*exp(1.15*\x^(0.5))})
-      node[right]{\small\textcolor{cuantico}{GNFS (clásico)}};
+    % GNFS (sub-exponencial) — curva que sube rápido, siempre arriba
+    \draw[clasico, very thick, domain=0.3:7, samples=60]
+      plot (\x, {0.08*exp(0.55*\x)})
+      node[right]{\small\textcolor{clasico}{GNFS (clásico)}};
 
-    % Shor (polinómico) — curva que crece suave
-    \draw[clasico, very thick, domain=0.5:7, samples=60]
-      plot (\x, {0.04*\x^2.2})
-      node[right]{\small\textcolor{clasico}{Shor (cuántico)}};
+    % Shor (polinómico) — curva que crece suave, siempre abajo
+    \draw[cuantico, very thick, domain=0.5:7, samples=60]
+      plot (\x, {0.02*\x^2})
+      node[right]{\small\textcolor{cuantico}{Shor (cuántico)}};
 
     \node[align=left, font=\tiny] at (3.5, 0.5) {RSA-2048\\$\approx$2048 bits};
     \draw[dashed, gray] (6.5,0) -- (6.5,4.3);
@@ -1524,7 +1523,7 @@
     \item P.\ Shor, ``Algorithms for Quantum Computation'', FOCS 1994.
   \end{itemize}
   \vspace{4pt}
-  \textbf{Material de la cátedra:}
+  \textbf{Material complementario:}
   \begin{itemize}
     \item C.\ H.\ Ugwuishiwu et al., ``An Overview of Quantum Cryptography
           and Shor's Algorithm'', \textit{IJATCSE} 9(5), 2020.
